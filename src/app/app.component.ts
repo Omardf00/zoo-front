@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'zoo';
+  title = 'Gestión del Zoo';
+  author: string="Omar Domínguez Fuentes";
 }

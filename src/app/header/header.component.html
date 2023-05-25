@@ -1,0 +1,27 @@
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Zoo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" [routerLink]="['/animals']" routerLinkActive="router-link-active" >Animals</a>
+            </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="query" name="query" (keyup)="search(query)" required>
+            </form>
+            <div class="results" *ngIf="results.length > 0">
+                <ul>
+                    <li *ngFor="let result of results">
+                        <a href="">{{ result.commonName }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+</header>

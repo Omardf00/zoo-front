@@ -1,0 +1,26 @@
+<div class="container" style="position: relative;">
+    <div class="card bg-dark mt-2" style="color: white;">
+        <form (ngSubmit) = "create(animal)" >
+            <div class="m-2">
+              <label for="commonName" class="form-label">Common Name</label>
+              <input type="text" class="form-control" id="commonName" [(ngModel)]="animal.commonName" name="commonName">
+            </div>
+            <div class="m-2">
+              <label for="scientificName" class="form-label">Scientific Name</label>
+              <input type="text" class="form-control" id="scientificName" [(ngModel)]="animal.scientificName" name="scientificName">
+            </div>
+            <div class="m-2">
+                <label for="specie" class="form-label">Specie</label>
+                <input type="text" class="form-control" id="specie" [(ngModel)]="animal.specie" name="specie">
+            </div>
+            <div class="m-2">
+                <label for="family" class="form-label">Family</label>
+                <input type="text" class="form-control" id="family" [(ngModel)]="animal.family" name="family">
+            </div>
+            <button type="submit" class="btn btn-primary m-2">Create</button>
+        </form>
+    </div>
+    <div class="imagen" style="display: flex; align-items: center; justify-content: center; width: 100%;">
+        <img src="./assets/images/form.jpg" class="card-img-top mt-3" alt="A welcome message" style="width: 30vw;">
+    </div>
+</div>
