@@ -14,7 +14,8 @@ const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
   {path: 'main', component: MainComponent},
   {path: 'animals', component: AnimalComponent},
-  {path: 'form', component: FormComponent}
+  {path: 'form', component: FormComponent},
+  {path: 'form/:id', component: FormComponent}
 ]
 
 @NgModule({

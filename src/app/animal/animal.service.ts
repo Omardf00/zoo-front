@@ -16,7 +16,7 @@ export class AnimalService {
     return this.http.get<Animal[]>(`${this.urlEndpoint}`);
   }
 
-  getAnimalById(id:number) {
+  getAnimalById(id:number): Observable<Animal> {
     return this.http.get<Animal>(`${this.urlEndpoint}` + `/` + id);
   }
 
@@ -26,6 +26,14 @@ export class AnimalService {
 
   searchAnimal(query:string) {
     return this.http.get<Animal[]>(`${this.urlEndpoint}` + "/findByName?query=" + query);
+  }
+
+  deleteAnimal(id:number){
+    return this.http.delete<string>(`${this.urlEndpoint}` + `/` + id);
+  }
+
+  updateAnimal(animal:Animal) {
+    return this.http.put<Animal>(`${this.urlEndpoint}`, animal);
   }
 
 }

@@ -23,8 +23,8 @@
                     <th>{{ animal.family }}</th>
                     <th>
                         <span>
-                            <button type="button" class="btn btn-warning m-1">Editar</button>
-                            <button type="button" class="btn btn-danger m-1">Eliminar</button>
+                            <button type="button" class="btn btn-warning m-1" [routerLink]="['/form', animal.id]" routerLinkActive="router-link-active">Editar</button>
+                            <button type="button" class="btn btn-danger m-1" (click)="delete(animal)">Eliminar</button>
                         </span>
                     </th>
                 </tr>

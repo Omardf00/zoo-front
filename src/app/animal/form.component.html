@@ -1,6 +1,6 @@
 <div class="container" style="position: relative;">
     <div class="card bg-dark mt-2" style="color: white;">
-        <form (ngSubmit) = "create(animal)" >
+        <form>
             <div class="m-2">
               <label for="commonName" class="form-label">Common Name</label>
               <input type="text" class="form-control" id="commonName" [(ngModel)]="animal.commonName" name="commonName">
@@ -17,7 +17,10 @@
                 <label for="family" class="form-label">Family</label>
                 <input type="text" class="form-control" id="family" [(ngModel)]="animal.family" name="family">
             </div>
-            <button type="submit" class="btn btn-primary m-2">Create</button>
+            <button *ngIf="!animal.id else elseBlock" type="submit" class="btn btn-primary m-2" (click)="create(animal)">Create</button>
+            <ng-template #elseBlock>
+                <button type="submit" class="btn btn-warning m-2" (click)="update()">Update</button>
+            </ng-template>
         </form>
     </div>
     <div class="imagen" style="display: flex; align-items: center; justify-content: center; width: 100%;">
